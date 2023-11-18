@@ -7,7 +7,7 @@
 </head>
 <body>
 
-	<form action="/store" method="POST">
+	<form action="/" method="POST">
 		<div>
 			<input type="text" name="name" placeholder="Name">
 		</div>
@@ -29,7 +29,7 @@
 		<div>
 			<h2> <?= $contact["name"] ?> </h2>
 			<p> <?= $contact["phone"] ?> </p>
-			
+			<a href="/<?= $contact["id"] ?>"> Editar </a>
 		</div>
 	<?php endforeach; ?>
 

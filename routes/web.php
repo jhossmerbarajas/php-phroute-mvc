@@ -9,7 +9,9 @@ $router = new RouteCollector;
 
 
 $router->get("/", [ContactController::class, 'index']);
-$router->post("store", [ContactController::class, 'store']);
+$router->get("/{id}", [ContactController::class, 'show']);
+$router->post("/{id}", [ContactController::class, 'update']);
+$router->post("/", [ContactController::class, 'store']);
 
 
 
