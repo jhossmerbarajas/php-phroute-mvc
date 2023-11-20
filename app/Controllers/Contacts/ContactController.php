@@ -13,6 +13,9 @@ class ContactController extends Controller
 	}
 
 	function store() {
+		$contactNumer = Contact::where("phone", $_POST["phone"])->exists();
+		if($contactNumer) return "Numero ya registrado";
+		var_dump($_POST);
 		Contact::create($_POST);
 		return $this->redirect("/");
 	}
@@ -26,6 +29,12 @@ class ContactController extends Controller
 		$contact = Contact::find($id);
 		$contact->update($_POST);
 
+		return $this->redirect('/');
+	}
+
+	function destroy($id) {
+		$contact = Contact::find($id);
+		$contact->delete();
 		return $this->redirect('/');
 	}
 }

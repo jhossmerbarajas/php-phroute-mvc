@@ -12,6 +12,7 @@ $router->get("/", [ContactController::class, 'index']);
 $router->get("/{id}", [ContactController::class, 'show']);
 $router->post("/{id}", [ContactController::class, 'update']);
 $router->post("/", [ContactController::class, 'store']);
+$router->post("/destroy/{id}", [ContactController::class, 'destroy']);
 
 
 
